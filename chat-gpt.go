@@ -26,6 +26,7 @@ type Choice struct {
 var apiUrl string = "https://api.openai.com/v1"
 
 func Chat(message string) *ModelResponse {
+	fmt.Println("Asking '" + message + "'...")
 	response, err := client().Do(request(message, "completions"))
 	if err != nil {
 		panic(err)
